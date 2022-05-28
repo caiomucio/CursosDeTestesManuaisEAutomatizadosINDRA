@@ -1,0 +1,14 @@
+npm install -D cypress
+
+o -D é porque é o ambiente de desenvolvimento 
+
+npx cypress open 
+vai executar o cypress em modo headed. Dessa forma vai ser em pipeline
+
+Lógica de programação em javascript 
+
+cypress.Treinamento 
+
+documentação do cypress
+cypress doc - docs.cypress.io --> contém a documentação do cypress 
+
