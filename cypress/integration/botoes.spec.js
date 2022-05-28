@@ -20,17 +20,18 @@ describe('Teste de botões',() => {
     cy.get('[id="last_name"]').should('have.value','Mucio Furtado dos Santos Filho')
 
   });
-  it.only('criar usuário', () => {
+  it.only('criar usuário com dados válidos', () => {
     cy.visit('https://automacaocombatista.herokuapp.com/users/new');
-    cy.get('[id="user_name"]').type('Caio');
-    cy.get('[id="user_lastname"]').type('Mucio Furtado dos Santos Filho');
-    cy.get('[id="user_email"]').type('caiomucio@hotmail.com');
-    cy.get('[id="user_address"]').type('av. joão cirilo 1700');
-    cy.get('[id="user_university"]').type('Uniesp');
-    cy.get('[id="user_profile"]').type('Estudante');
-    cy.get('[id="user_gender"]').type('Masculino');
-    cy.get('[id="user_age"]').type('23');
-    cy.get('[value="Criar"]').click();
+    cy.get('.tamanhodiv2 > h5').should('have.text', 'Novo Usuário!!');
+    cy.get('[id="user_name"]').should('be.visible').type('nao').should('have.value', 'nao');
+    cy.get('[id="user_lastname"]').should('be.visible').type('qualquer').should('have.value', 'qualquer');
+    cy.get('[id="user_email"]').should('be.visible').type('qualquer@hotmail.com').should('have.value', 'qualquer@hotmail.com');
+    cy.get('[id="user_address"]').should('be.visible').type('av nao sei').should('have.value', 'av nao sei');
+    cy.get('[id="user_university"]').should('be.visible').type('Uniesp').should('have.value', 'Uniesp');
+    cy.get('[id="user_profile"]').should('be.visible').type('Estudante').should('have.value', 'Estudante');
+    cy.get('[id="user_gender"]').should('be.visible').type('Masculino').should('have.value', 'Masculino');
+    cy.get('[id="user_age"]').should('be.visible').type('99').should('have.value', '99');
+    cy.get('[value="Criar"]').should('be.visible').click();
     cy.get('[id="notice"]').should('have.text','Usuário Criado com sucesso')
 
     
